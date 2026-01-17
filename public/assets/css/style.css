@@ -765,6 +765,15 @@
     }
 }
 
+@media (min-width: 992px) {
+    .team-img-wrapper {
+        max-width: 180px;
+        /* Further reduced size on desktop */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 /*** Team Page End ***/
 
 /* Leave existing owl-dots CSS if needed, or append to end of file */

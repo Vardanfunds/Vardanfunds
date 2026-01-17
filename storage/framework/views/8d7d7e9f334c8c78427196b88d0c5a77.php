@@ -4,9 +4,8 @@
 <div class="container-fluid bg-light py-5">
     <div class="container py-5">
         <div class="row mb-5">
-            <div class="col-12 text-center wow fadeInDown" data-wow-delay="0.1s">
+            <div class="col-12 text-start wow fadeInDown" data-wow-delay="0.1s">
                 <h4 class="text-primary mb-3">Sector & Research</h4>
-                <p class="lead text-muted">In-depth analysis of key growth sectors driving India's economy.</p>
             </div>
         </div>
 

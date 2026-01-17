@@ -6,7 +6,7 @@
                 <div class="row g-5 align-items-center">
 
                     <div class="col-lg-12 col-xl-12 wow fadeInRight" data-wow-delay="0.3s">
-                        <h4 class="text-primary">Partner & Associate</h4>
+                        <h4 class="text-primary">Partners & Associates</h4>
                         <div class="row mt-4">
                            
                                  <?php if(isset($newspaper)): ?>

@@ -23,38 +23,31 @@
            Home
         </a>
 
-        <!-- Team -->
-        <a href="{{ url('teams') }}"
-           class="nav-item nav-link {{ request()->is('teams') ? 'active' : '' }}">
-           Team
-        </a>
-
         <!-- Funds Dropdown -->
-        <!-- Funds Dropdown -->
-        <div class="nav-item dropdown {{ request()->is('funds','Portfolio') ? 'active' : '' }}">
+        <div class="nav-item dropdown {{ request()->is('our-funds','portfolio') ? 'active' : '' }}">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 Funds
             </a>
             <div class="dropdown-menu m-0">
-                <a href="{{ url('funds') }}"
-                   class="dropdown-item {{ request()->is('funds') ? 'active' : '' }}">
+                <a href="{{ url('our-funds') }}"
+                   class="dropdown-item {{ request()->is('our-funds') ? 'active' : '' }}">
                    Our Funds
                 </a>
-                <a href="{{ url('Portfolio') }}"
-                   class="dropdown-item {{ request()->is('portfiloview') ? 'active' : '' }}">
+                <a href="{{ url('portfolio') }}"
+                   class="dropdown-item {{ request()->is('portfolio') ? 'active' : '' }}">
                    Portfolio
                 </a>
             </div>
         </div>
 
         <!-- Our Approach Dropdown -->
-        <div class="nav-item dropdown {{ request()->is('investmentStrategy','sector','partner') ? 'active' : '' }}">
+        <div class="nav-item dropdown {{ request()->is('investment-strategy','sector','partner') ? 'active' : '' }}">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 Our Approach
             </a>
             <div class="dropdown-menu m-0">
-                <a href="{{ url('investmentStrategy') }}"
-                   class="dropdown-item {{ request()->is('investmentStrategy') ? 'active' : '' }}">
+                <a href="{{ url('investment-strategy') }}"
+                   class="dropdown-item {{ request()->is('investment-strategy') ? 'active' : '' }}">
                    Investment Strategy
                 </a>
                 <a href="{{ url('sector') }}"
@@ -63,28 +56,36 @@
                 </a>
                 <a href="{{ url('partner') }}"
                    class="dropdown-item {{ request()->is('partner') ? 'active' : '' }}">
-                   Partner & Associates
+                   Partners & Associates
                 </a>
             </div>
         </div>
 
+        <!-- Team -->
+        <a href="{{ url('team') }}"
+           class="nav-item nav-link {{ request()->is('team') ? 'active' : '' }}">
+           Team
+        </a>
+
+        <!-- Newsletter (Standalone) -->
+        <a href="{{ url('newsletter') }}"
+           class="nav-item nav-link {{ request()->is('newsletter') ? 'active' : '' }}">
+           Newsletter
+        </a>
+
         <!-- Statutory Disclosure Dropdown -->
-        <div class="nav-item dropdown {{ request()->is('fundceqube','fundvenus','newspaper') ? 'active' : '' }}">
+        <div class="nav-item dropdown {{ request()->is('vardan-ceqube','vardan-venus') ? 'active' : '' }}">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 Statutory Disclosure
             </a>
             <div class="dropdown-menu m-0">
-                <a href="{{ url('fundceqube') }}"
-                   class="dropdown-item {{ request()->is('fundceqube') ? 'active' : '' }}">
+                <a href="{{ url('vardan-ceqube') }}"
+                   class="dropdown-item {{ request()->is('vardan-ceqube') ? 'active' : '' }}">
                    Vardan Ceqube
                 </a>
-                <a href="{{ url('fundvenus') }}"
-                   class="dropdown-item {{ request()->is('fundvenus') ? 'active' : '' }}">
+                <a href="{{ url('vardan-venus') }}"
+                   class="dropdown-item {{ request()->is('vardan-venus') ? 'active' : '' }}">
                    Vardan Venus
-                </a>
-                <a href="{{ url('newspaper') }}"
-                   class="dropdown-item {{ request()->is('newspaper') ? 'active' : '' }}">
-                   Newsletter
                 </a>
             </div>
         </div>

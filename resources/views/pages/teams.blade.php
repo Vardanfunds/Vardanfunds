@@ -19,7 +19,7 @@
     <div class="row g-4"> <!-- Added gap -->
         @isset($teamsModel)
             @foreach ($teamsModel as $key => $item) 
-                <div class="col-6 col-md-4 col-lg-3"> <!-- Added col-lg-3 for better desktop view -->
+                <div class="col-6 col-md-4 col-lg-4"> <!-- 3 Columns on Desktop/Tablet -->
                     <div class="team-item">
                         <div class="team-img-wrapper">
                             <a href="{{ ('team/view').'/'.$item['id'] }}">
