@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+<?php $__env->startSection('content'); ?>
 <style>
 .team-card {
     position: relative;
@@ -55,20 +54,20 @@
                         <h4 class="text-primary">Portfolio</h4>
                         <div class="row g-4 justify-content-center justify-content-lg-start"> <!-- Mobile: Center, Desktop: Start (Left) -->
                            
-                                 @isset($newspaper)
-                                    @foreach ($newspaper as $key=> $item)
+                                 <?php if(isset($newspaper)): ?>
+                                    <?php $__currentLoopData = $newspaper; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key=> $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                   <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                                             <div class="team-card mx-auto"> <!-- Center card in column -->
-                                                <img src="{{ $item->img }}" style="width:100%; height:100%; object-fit:contain;" alt="Portfolio Item"> <!-- Responsive image inside card -->
+                                                <img src="<?php echo e($item->img); ?>" style="width:100%; height:100%; object-fit:contain;" alt="Portfolio Item"> <!-- Responsive image inside card -->
 
                                                 <div class="team-overlay">
-                                                    <p class="designation">{{ $item['name'] ?? '' }}</p>
+                                                    <p class="designation"><?php echo e($item['name'] ?? ''); ?></p>
                                                 </div>
                                             </div>
                                         </div>
 
-                                    @endforeach
-                                @endisset
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php endif; ?>
                            
                         </div>
                         
@@ -79,4 +78,5 @@
         </div>
 <!-- About End -->
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\Web Devlopment\VardanFunds\resources\views/pages/portfilo.blade.php ENDPATH**/ ?>
