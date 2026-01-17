@@ -708,6 +708,66 @@
     height: 100%;
 }
 
+
+/*** Team Page Start ***/
+.team-item {
+    padding: 10px;
+    /* decreased padding */
+    transition: 0.3s;
+}
+
+.team-img-wrapper {
+    overflow: hidden;
+    border-radius: 8px;
+    /* Slight rounded corners */
+    aspect-ratio: 1 / 1.2;
+    /* Slightly taller than square, good for portraits */
+    margin-bottom: 15px;
+}
+
+.team-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures image covers the area without distortion */
+    object-position: top center;
+    /* Focus on faces usually at the top */
+    transition: transform 0.3s ease;
+}
+
+.team-item:hover .team-image {
+    transform: scale(1.05);
+    /* Subtle zoom on hover */
+}
+
+.team-name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.team-name a {
+    transition: color 0.3s;
+}
+
+.team-name a:hover {
+    color: var(--bs-primary) !important;
+}
+
+@media (max-width: 768px) {
+    .team-name {
+        font-size: 14px;
+        /* Smaller font on mobile */
+    }
+
+    .team-img-wrapper {
+        aspect-ratio: 1 / 1.25;
+        /* Maintain aspect ratio */
+    }
+}
+
+/*** Team Page End ***/
+
+/* Leave existing owl-dots CSS if needed, or append to end of file */
 .project-carousel .owl-dots {
     position: absolute;
     width: 100%;
