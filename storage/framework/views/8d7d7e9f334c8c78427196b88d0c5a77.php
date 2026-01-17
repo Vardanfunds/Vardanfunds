@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <!-- Header Section -->
 <div class="container-fluid bg-light py-5">
@@ -29,7 +28,7 @@
             </div>
             <div class="col-lg-5">
                 <div class="rounded overflow-hidden shadow-sm">
-                    <img class="img-fluid w-100" src="{{ asset('assets/img/ManufacturingSector.png') }}" alt="Manufacturing Sector" style="object-fit: cover; height: 300px;">
+                    <img class="img-fluid w-100" src="<?php echo e(asset('assets/img/ManufacturingSector.png')); ?>" alt="Manufacturing Sector" style="object-fit: cover; height: 300px;">
                 </div>
             </div>
         </div>
@@ -40,7 +39,7 @@
         <div class="row align-items-center mb-5 wow fadeInUp" data-wow-delay="0.2s">
             <div class="col-lg-5 order-2 order-lg-1 mb-4 mb-lg-0"> <!-- Image Left on Desktop -->
                 <div class="rounded overflow-hidden shadow-sm">
-                    <img class="img-fluid w-100" src="{{ asset('assets/img/ConsumptionDriven.jpg') }}" alt="Consumption Driven" style="object-fit: cover; height: 300px;">
+                    <img class="img-fluid w-100" src="<?php echo e(asset('assets/img/ConsumptionDriven.jpg')); ?>" alt="Consumption Driven" style="object-fit: cover; height: 300px;">
                 </div>
             </div>
             <div class="col-lg-7 order-1 order-lg-2">
@@ -79,7 +78,7 @@
             </div>
             <div class="col-lg-5">
                 <div class="rounded overflow-hidden shadow-sm">
-                    <img class="img-fluid w-100" src="{{ asset('assets/img/Banking-FinancialServices.jpg') }}" alt="BFSI" style="object-fit: cover; height: 300px;">
+                    <img class="img-fluid w-100" src="<?php echo e(asset('assets/img/Banking-FinancialServices.jpg')); ?>" alt="BFSI" style="object-fit: cover; height: 300px;">
                 </div>
             </div>
         </div>
@@ -90,7 +89,7 @@
         <div class="row align-items-center mb-5 wow fadeInUp" data-wow-delay="0.2s">
             <div class="col-lg-5 order-2 order-lg-1 mb-4 mb-lg-0">
                 <div class="rounded overflow-hidden shadow-sm">
-                    <img class="img-fluid w-100" src="{{ asset('assets/img/Education.jpg') }}" alt="Education" style="object-fit: cover; height: 300px;">
+                    <img class="img-fluid w-100" src="<?php echo e(asset('assets/img/Education.jpg')); ?>" alt="Education" style="object-fit: cover; height: 300px;">
                 </div>
             </div>
             <div class="col-lg-7 order-1 order-lg-2">
@@ -132,7 +131,7 @@
             </div>
             <div class="col-lg-5">
                 <div class="rounded overflow-hidden shadow-sm">
-                    <img class="img-fluid w-100" src="{{ asset('assets/img/GreenTechnology.jpg') }}" alt="Technology" style="object-fit: cover; height: 300px;">
+                    <img class="img-fluid w-100" src="<?php echo e(asset('assets/img/GreenTechnology.jpg')); ?>" alt="Technology" style="object-fit: cover; height: 300px;">
                 </div>
             </div>
         </div>
@@ -143,7 +142,7 @@
         <div class="row align-items-center mb-5 wow fadeInUp" data-wow-delay="0.2s">
             <div class="col-lg-5 order-2 order-lg-1 mb-4 mb-lg-0">
                 <div class="rounded overflow-hidden shadow-sm">
-                    <img class="img-fluid w-100" src="{{ asset('assets/img/Infra.jpg') }}" alt="Infrastructure" style="object-fit: cover; height: 300px;">
+                    <img class="img-fluid w-100" src="<?php echo e(asset('assets/img/Infra.jpg')); ?>" alt="Infrastructure" style="object-fit: cover; height: 300px;">
                 </div>
             </div>
              <div class="col-lg-7 order-1 order-lg-2">
@@ -165,4 +164,5 @@
 </div>
 <!-- About End -->
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH D:\Web Devlopment\VardanFunds\resources\views/pages/sector.blade.php ENDPATH**/ ?>

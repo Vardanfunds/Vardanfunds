@@ -14,24 +14,24 @@ Route::middleware([SecureHeaders::class])->group(function () {
     Route::controller(ClientController::class)->group(function () {
         Route::get('/', 'index');
         Route::get('/vision', 'vision');
-        Route::get('/teams', 'teams');
+        Route::get('/team', 'teams');
         Route::get('team/view/{id}', 'teamsview');
         Route::get('/ceqube', 'ceqube');
         Route::get('/venus', 'venus');
-        Route::get('/funds', 'funds');
-        Route::get('/investmentStrategy', 'investment');
+        Route::get('/our-funds', 'funds');
+        Route::get('/investment-strategy', 'investment');
         Route::get('/sector', 'sector');
         Route::get('/login', 'login');
-        Route::get('/newspaper', 'newspaper');
+        Route::get('/newsletter', 'newspaper');
         Route::post('/savecontact', 'contactsave');
         Route::get('/partner', 'partner');
         Route::get('/policy', 'policy');
         Route::get('/disclaimer', 'disclaimer');
         Route::get('/termuse', 'termuse');
-        Route::get('/Portfolio', 'portfilo');
+        Route::get('/portfolio', 'portfilo');
 
-        Route::get('/fundceqube', 'fundceqube');
-        Route::get('/fundvenus', 'fundvenus');
+        Route::get('/vardan-ceqube', 'fundceqube');
+        Route::get('/vardan-venus', 'fundvenus');
     });
 
     Route::controller(AuthController::class)->group(function () {

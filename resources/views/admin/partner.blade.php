@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex align-items-center">
-                        <h4 class="card-title">Partner & Associate</h4>
+                        <h4 class="card-title">Partners & Associates</h4>
                         <button class="btn btn-primary btn-round ms-auto" data-bs-toggle="modal" data-bs-target="#addpartner">
                             <i class="fa fa-plus"></i>
                             Add Record
@@ -62,7 +62,7 @@
             <div class="modal-header border-0">
                 <h5 class="modal-title">
                     <span class="fw-mediumbold" id="modalTitle">Add</span>
-                    <span class="fw-light">Partner & Associate</span>
+                    <span class="fw-light">Partners & Associates</span>
                 </h5>
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">&times;</span>

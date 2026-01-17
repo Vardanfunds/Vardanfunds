@@ -79,8 +79,14 @@
 
                 <!-- TABS -->
                 <div class="d-flex mb-0">
-                    <div class="strategy-tab active" onclick="showFund('ceqube', this)">Vardan Ceqube India Investment Fund</div>
-                    <div class="strategy-tab" onclick="showFund('venus', this)">Vardan Venus Investment Fund Series 1</div>
+                    <div class="strategy-tab active" onclick="showFund('ceqube', this)">
+                        <span class="d-md-none">Vardan Ceqube</span>
+                        <span class="d-none d-md-block">Vardan Ceqube India Investment Fund</span>
+                    </div>
+                    <div class="strategy-tab" onclick="showFund('venus', this)">
+                        <span class="d-md-none">Vardan Venus</span>
+                        <span class="d-none d-md-block">Vardan Venus Investment Fund Series 1</span>
+                    </div>
                 </div>
 
                 <!-- Content Wrapper -->

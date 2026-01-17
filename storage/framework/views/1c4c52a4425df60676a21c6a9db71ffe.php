@@ -21,7 +21,7 @@
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-3 col-xl-3 wow fadeInRight" data-wow-delay="0.3s">
-                    <img src="<?php echo e(asset('assets/img/vision.jpg')); ?>" alt="Vision image" style="max-width: 95%; max-height: 75%; !important" class="img-fluid">
+                    <img src="<?php echo e(asset('assets/img/vision.jpg')); ?>" alt="Vision image" class="img-fluid vision-image">
                 </div>
                 <div class="col-lg-9 col-xl-9 wow fadeInRight" data-wow-delay="0.3s">
                     <h4 class="text-primary">Vision</h4>
