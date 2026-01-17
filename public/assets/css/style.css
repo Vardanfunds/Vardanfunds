@@ -211,8 +211,8 @@
 }
 
 @media (max-width: 991px) {
-    .navbar .navbar-nav .nav-item.nav-link {
-        margin: 15px 0 !important;
+    .navbar .navbar-nav .nav-item {
+        margin: 10px 0 !important;
     }
 
 }
@@ -235,6 +235,10 @@
     padding: 8px 15px;
     color: var(--bs-dark);
     background: var(--bs-primary);
+}
+
+.navbar .navbar-toggler span.fa {
+    color: var(--bs-white) !important;
 }
 
 #searchModal .modal-content {
