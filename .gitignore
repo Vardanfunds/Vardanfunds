@@ -12,7 +12,7 @@
 
 # ========== Dependencies ==========
 /node_modules
-/vendor
+
 
 # ========== Build Artifacts ==========
 /public/build
