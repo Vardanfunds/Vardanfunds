@@ -18,7 +18,7 @@
     <div class="row g-4"> <!-- Added gap -->
         <?php if(isset($teamsModel)): ?>
             <?php $__currentLoopData = $teamsModel; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
-                <div class="col-6 col-md-4 col-lg-3"> <!-- Added col-lg-3 for better desktop view -->
+                <div class="col-6 col-md-4 col-lg-4"> <!-- 3 Columns on Desktop/Tablet -->
                     <div class="team-item">
                         <div class="team-img-wrapper">
                             <a href="<?php echo e(('team/view').'/'.$item['id']); ?>">

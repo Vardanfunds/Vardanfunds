@@ -13,15 +13,17 @@
                         @isset($newspaper)
                             @foreach ($newspaper as $key => $item)
                                
-                                <div class="col-lg-3 d-flex flex-column align-items-center text-center" style="margin-top: 50px">
-                                    <a href="{{ asset($item->file) }}" class="text-dark" target="_blank">
-                                        <img src="{{ $item->img ? asset($item->img) : asset('assets/img/newsletter.png') }}"
-                                            class="img-fluid mb-2"
-                                            style="width:210px; height:210px;"
-                                            alt="Team Image"/>
-                                    </a>
-                                    <h5 class="mt-2">
-                                        <a href="{{ asset($item->file) }}" class="text-dark" target="_blank">
+                                <div class="col-6 col-md-4 col-lg-3 d-flex flex-column align-items-center text-center">
+                                    <div class="mb-3 position-relative" style="width: 100%; max-width: 240px;">
+                                        <a href="{{ asset($item->file) }}" class="d-block text-dark shadow-sm rounded overflow-hidden" target="_blank" style="transition: transform 0.3s; display: block;">
+                                            <img src="{{ $item->img ? asset($item->img) : asset('assets/img/newsletter.png') }}"
+                                                class="img-fluid w-100"
+                                                style="aspect-ratio: 210/297; object-fit: cover; object-position: top;"
+                                                alt="{{ $item['name'] }}"/>
+                                        </a>
+                                    </div>
+                                    <h5 class="mt-0" style="font-size: 1rem;">
+                                        <a href="{{ asset($item->file) }}" class="text-dark text-decoration-none" target="_blank">
                                             {{ $item['name'] }}
                                         </a>
                                     </h5>
