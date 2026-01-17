@@ -11,7 +11,7 @@
 </a>
 
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-    <span class="fa fa-bars"></span>
+    <span class="fa fa-bars text-white"></span>
 </button>
 
 <div class="collapse navbar-collapse" id="navbarCollapse">

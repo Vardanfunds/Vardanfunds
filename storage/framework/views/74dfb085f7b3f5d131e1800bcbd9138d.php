@@ -102,12 +102,24 @@
 
 @media (max-width: 768px) {
     .slider-title {
-        height: 80px;
-        bottom: 50px;
+        height: auto;
+        bottom: 30px;
+        width: 95%; /* Wider container to fit text */
     }
 
     .slider-title h2 {
-        font-size: 26px;
+        font-size: 14px; /* Much smaller font */
+        padding: 8px 15px; /* Smaller padding */
+        white-space: nowrap; /* Force one line if possible */
+        overflow: hidden;
+        text-overflow: ellipsis; /* Ellipsis if it still overflows */
+        width: auto;
+        display: inline-block;
+    }
+
+    /* Adjust image aspect ratio for mobile so it is not too thin */
+    .slider-image {
+        aspect-ratio: 16 / 9; 
     }
 }
 /* Section spacing */
