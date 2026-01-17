@@ -45,6 +45,11 @@ class ClientController extends Controller
     {
         return view('pages.venus');
     }
+    public function funds()
+    {
+        $portfolio = PortfiloModel::orderBy('id','desc')->get();
+        return view('pages.funds', compact('portfolio'));
+    }
     public function investment()
     {
         return view('pages.investment');
@@ -95,7 +100,7 @@ class ClientController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'phone' => 'required|string|max:255|unique:contact,phone',
-            'email' => 'required|email|max:255|unique:contact,email',
+            'email' => 'required|email|max:255',
             'subject' => 'required|string',
             'message' => 'required|string',
             'txtfundtype' => 'required|string',

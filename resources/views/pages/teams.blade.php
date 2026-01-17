@@ -16,7 +16,7 @@
 <!-- TEAM GRID -->
 <div class="container py-5 text-center">
 
-    <div class="row gy-5 justify-content-center">
+    <div class="row gy-5">
         @isset($teamsModel)
             @foreach ($teamsModel as $key=> $item) 
                 <!-- Row 1 -->

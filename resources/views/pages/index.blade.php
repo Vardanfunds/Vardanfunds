@@ -22,11 +22,11 @@
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-3 col-xl-3 wow fadeInRight" data-wow-delay="0.3s">
-                    <img src="{{ asset('assets/img/vision.jpeg') }}" alt="Vision image" style="max-width: 111%; max-height: 111%; !important" class="img-fluid">
+                    <img src="{{ asset('assets/img/vision.jpg') }}" alt="Vision image" style="max-width: 95%; max-height: 75%; !important" class="img-fluid">
                 </div>
                 <div class="col-lg-9 col-xl-9 wow fadeInRight" data-wow-delay="0.3s">
-                    <h2 class="text-primary">Vision</h2>
-                    <h3 class="mb-2">Partnering with Indian Entrepreneurs to create the<br/> "Business of Tomorrow"</h3>
+                    <h4 class="text-primary">Vision</h4>
+                    <h5 class="mb-2">Partnering with Indian Entrepreneurs to create the<br/> "Business of Tomorrow"</h5>
                     <p class="mb-2"><br/>Indian entrepreneurs will be drivers of domestic & global economies. Their needs in
                         this journey would not only be limited to capital, but also extend to: Expanding Skills,
                         Capabilities, Processes & Strong Governance.</p>
@@ -47,15 +47,15 @@
                 <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
                     <div class="contact-item">
                         <div class="pb-5">
-                            <h2 class="text-primary">Contact Us</h2>
-                            <h3 class="mb-4">Get In Touch With Us</h3>
+                            <h4 class="text-primary">Contact Us</h4>
+                            <h5 class="mb-2">Get In Touch With Us</h5>
                             {{-- <h4 class="lh-base mb-0">Receive messages instantly with our PHP and Ajax contact form - available in the <a href="https://htmlcodex.com/downloading/?item=3338">Pro Version</a> only.</h4> --}}
                         </div>
                         <div class="d-flex align-items-center mb-4">
                             <div class="bg-primary btn-lg-square rounded-circle p-4"><i class="fa fa-home text-white"></i>
                             </div>
                             <div class="ms-4">
-                                <h4>Address</h4>
+                                <h5>Address</h5>
                                 <p class="mb-0">3rd Floor,Office No: 312, South Annexe Tower 2, One World Center,
                                     Senapati Bapat Marg, Lower Parel (w),
                                     Mumbai – 400013, India</p>
@@ -65,7 +65,7 @@
                             <div class="bg-primary btn-lg-square rounded-circle p-2"><i
                                     class="fa fa-phone-alt text-white"></i></div>
                             <div class="ms-4">
-                                <h4>Contact No.</h4>
+                                <h5>Contact No.</h5>
                                 <p class="mb-0">+91 22-4964-2959</p>
                             </div>
                         </div>
@@ -73,7 +73,7 @@
                             <div class="bg-primary btn-lg-square rounded-circle p-2"><i
                                     class="fa fa-envelope-open text-white"></i></div>
                             <div class="ms-4">
-                                <h4>Email</h4>
+                                <h5>Email</h5>
                                 <p class="mb-0">reporting@vardanfunds.com</p>
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                                     <select class="form-control" id="txtfundtype" required>
                                         <option value="">Select Fund</option>
                                         <option value="Vardan Ceqube India Investment Fund">Vardan Ceqube India Investment Fund</option>
-                                        <option value="Vardan-Venus Investment Fund Series 1">Vardan-Venus Investment Fund Series 1</option>
+                                        <option value="Vardan Venus Investment Fund Series 1">Vardan Venus Investment Fund Series 1</option>
                                     </select>
                                     <label for="project">Select Fund</label>
                                 </div>

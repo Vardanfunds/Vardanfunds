@@ -7,10 +7,10 @@
             <div class="row g-5 align-items-center">
 
                 <div class="col-lg-12 col-xl-12 wow fadeInRight" data-wow-delay="0.3s">
-                    <h4 class="text-primary">Vardan-Venus</h4>
+                    <h4 class="text-primary">Vardan Venus</h4>
                     <div class="row">
 
-                        @isset($newspaper)
+                        {{-- @isset($newspaper)
                             @foreach ($newspaper as $key => $item)
                                 <div class="col-lg-3 mb-4 d-flex flex-column align-items-center text-center">
                                      <a href="{{ asset($item->file) }}" class="text-dark" target="_blank">
@@ -18,17 +18,29 @@
                                         class="img-fluid mb-2" style="width:210px; height:210px;"/></a>
 
                                     <h5 class="mt-2">
-                                        <a href="{{ asset($item->file) }}" class="text-dark" target="_blank">
-                                            @if ($item['type'] == 1)
-                                                Vardan Ceqube
-                                            @else
-                                                Vardan-Venus
-                                            @endif
-                                        </a>
+                                       
                                     </h5>
                                 </div>
                             @endforeach
-                        @endisset
+                        @endisset --}}
+                       <div class="col-lg-12 mt-4">
+                                <table class="table table-striped table-bordered"> 
+                                    {{-- <thead>
+                                        <tr>
+                                            <th>PDF</th>
+                                        </tr>
+                                    </thead> --}}
+                                    <tbody>
+                                        @isset($newspaper)
+                                            @foreach ($newspaper as $key => $item)
+                                                <tr>
+                                                    <td><a href="{{ asset($item->file) }}" class="text-dark" target="_blank">{{ $item['name'] }}</a></td>
+                                                </tr>
+                                            @endforeach
+                                        @endisset
+                                    </tbody>
+                                </table>
+                         </div>
                     </div>
                 </div>
 

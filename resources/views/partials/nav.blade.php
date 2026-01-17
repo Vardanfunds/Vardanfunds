@@ -1,4 +1,4 @@
-        <!-- Navbar & Hero Start -->
+<!-- Navbar & Hero Start -->
         <div class="container-fluid sticky-top px-0">
             <div class="position-absolute text-primary" style="left: 0; top: 0; width: 100%; height: 100%;">
             </div>
@@ -30,20 +30,17 @@
         </a>
 
         <!-- Funds Dropdown -->
-        <div class="nav-item dropdown {{ request()->is('ceqube','venus','portfiloview') ? 'active' : '' }}">
+        <!-- Funds Dropdown -->
+        <div class="nav-item dropdown {{ request()->is('funds','Portfolio') ? 'active' : '' }}">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 Funds
             </a>
             <div class="dropdown-menu m-0">
-                <a href="{{ url('ceqube') }}"
-                   class="dropdown-item {{ request()->is('ceqube') ? 'active' : '' }}">
-                   Vardan Ceqube
+                <a href="{{ url('funds') }}"
+                   class="dropdown-item {{ request()->is('funds') ? 'active' : '' }}">
+                   Our Funds
                 </a>
-                <a href="{{ url('venus') }}"
-                   class="dropdown-item {{ request()->is('venus') ? 'active' : '' }}">
-                   Vardan-Venus
-                </a>
-                <a href="{{ url('portfiloview') }}"
+                <a href="{{ url('Portfolio') }}"
                    class="dropdown-item {{ request()->is('portfiloview') ? 'active' : '' }}">
                    Portfolio
                 </a>
@@ -51,13 +48,13 @@
         </div>
 
         <!-- Our Approach Dropdown -->
-        <div class="nav-item dropdown {{ request()->is('investment','sector','partner') ? 'active' : '' }}">
+        <div class="nav-item dropdown {{ request()->is('investmentStrategy','sector','partner') ? 'active' : '' }}">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                 Our Approach
             </a>
             <div class="dropdown-menu m-0">
-                <a href="{{ url('investment') }}"
-                   class="dropdown-item {{ request()->is('investment') ? 'active' : '' }}">
+                <a href="{{ url('investmentStrategy') }}"
+                   class="dropdown-item {{ request()->is('investmentStrategy') ? 'active' : '' }}">
                    Investment Strategy
                 </a>
                 <a href="{{ url('sector') }}"
@@ -83,7 +80,7 @@
                 </a>
                 <a href="{{ url('fundvenus') }}"
                    class="dropdown-item {{ request()->is('fundvenus') ? 'active' : '' }}">
-                   Vardan-Venus
+                   Vardan Venus
                 </a>
                 <a href="{{ url('newspaper') }}"
                    class="dropdown-item {{ request()->is('newspaper') ? 'active' : '' }}">

@@ -15,8 +15,8 @@
 .team-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(25, 61, 95, 0.9); /* dark blue overlay */
-    color: #fff;
+    background: rgba(187, 190, 194, 0.9) ;  /* dark blue overlay */
+    color: #41464b;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,13 +36,13 @@
 .team-overlay .designation {
     font-size: 1rem;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin-bottom: 8px;
 }
 
 .team-overlay .name {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 </style>
@@ -52,7 +52,7 @@
                 <div class="row g-5 align-items-center">
 
                     <div class="col-lg-12 col-xl-12 wow fadeInRight" data-wow-delay="0.3s">
-                        <h4 class="text-primary">Portfilo</h4>
+                        <h4 class="text-primary">Portfolio</h4>
                         <div class="row">
                            
                                  @isset($newspaper)

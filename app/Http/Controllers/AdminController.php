@@ -471,6 +471,7 @@ class AdminController extends Controller
             'id' => 'nullable|integer',
             'name' => 'required|string|max:255',
             'image' => 'nullable|file|mimes:pdf|max:5120', // PDF
+            'filename1' => 'required|string|max:255',
         ]);
 
         $id = $request->id;
@@ -507,7 +508,7 @@ class AdminController extends Controller
         if (session('user') && isset(session('user')->id)) {
             $NewpaperModel->createdby = session('user')->id;
         }
-
+        $NewpaperModel->name=$request->filename1;
         $NewpaperModel->save();
 
         return response()->json([

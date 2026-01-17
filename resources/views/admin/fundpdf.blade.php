@@ -33,7 +33,7 @@
                                                         @if ($item['type'] == 1)
                                                             Vardan Ceqube India Investment Fund
                                                         @else
-                                                            Vardan-Venus Investment Fund Series 1
+                                                            Vardan Venus Investment Fund Series 1
                                                         @endif
                                                     </a></td>
                                                 <td>
@@ -80,13 +80,19 @@
                     <input id="txtfundid" name="id" type="hidden" />
 
                     <div class="row">
+                          <div class="col-sm-12">
+                            <div class="form-group form-group-default">
+                                <label>File name</label>
+                                <input id="txtfullname" type="text" class="form-control" placeholder="Enter name" />
+                            </div>
+                        </div>
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
                                 <label>Fund Type</label>
                                 <select class="form-control" id="txtfundtype" name="txtfundtype">
                                     <option value="">Select Fund Type</option>
                                     <option value="1">Vardan Ceqube India Investment Fund</option>
-                                    <option value="2">Vardan-Venus Investment Fund Series 1</option>
+                                    <option value="2">Vardan Venus Investment Fund Series 1</option>
                                 </select>
                             </div>
                         </div>

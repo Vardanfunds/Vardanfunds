@@ -117,14 +117,14 @@
 
 /* Grey bar header */
 .section-header {
-    background: #ffffff;
+    background: #716b6bd1;
     padding: 12px 20px;
     margin-bottom: 20px;
 }
 
 .section-header h5 {
     margin: 0;
-    color: #f70505;
+    color: #ffffff;
     font-size: 1rem;
     font-weight: 600;
 }

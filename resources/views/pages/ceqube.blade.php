@@ -7,11 +7,11 @@
                 <div class="row g-5 align-items-center">
                     
                     <div class="col-lg-12 col-xl-12 wow fadeInRight" data-wow-delay="0.3s">
-                        <h2 class="text-primary">Vardan Ceqube</h2>
-                        <h2 class="mb-4">Vardan Ceqube India Investment Fund</h2>
+                        <h4 class="text-primary">Vardan Ceqube</h4>
+                        <h5 class="mb-4">Vardan Ceqube India Investment Fund</h5>
                         <p class="text ps-4 mb-4"><b>Investment Objective</b> - The Fund aims to achieve long-term capital appreciation and generate superior risk-adjusted returns by investing in small-cap and mid-cap companies in India. The Fund targets growth capital, seeking control or significant minority stakes, and works with companies to position them for future growth and generate returns for all stakeholders.
                         </p>
-                       <h3>Fund Details:</h3>
+                       <h5>Fund Details:</h5>
                        <table class="table table-striped table-bordered">
                             <thead>
                                 <tr>

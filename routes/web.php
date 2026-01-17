@@ -6,9 +6,11 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Middleware\UserAuthenticate;
+use App\Http\Controllers\ClearController;
 
 Route::middleware([SecureHeaders::class])->group(function () {
 
+ // Route::get('/clear-cache', [ClearController::class, 'clear']);
     Route::controller(ClientController::class)->group(function () {
         Route::get('/', 'index');
         Route::get('/vision', 'vision');
@@ -16,7 +18,8 @@ Route::middleware([SecureHeaders::class])->group(function () {
         Route::get('team/view/{id}', 'teamsview');
         Route::get('/ceqube', 'ceqube');
         Route::get('/venus', 'venus');
-        Route::get('/investment', 'investment');
+        Route::get('/funds', 'funds');
+        Route::get('/investmentStrategy', 'investment');
         Route::get('/sector', 'sector');
         Route::get('/login', 'login');
         Route::get('/newspaper', 'newspaper');
@@ -25,7 +28,7 @@ Route::middleware([SecureHeaders::class])->group(function () {
         Route::get('/policy', 'policy');
         Route::get('/disclaimer', 'disclaimer');
         Route::get('/termuse', 'termuse');
-        Route::get('/portfiloview', 'portfilo');
+        Route::get('/Portfolio', 'portfilo');
 
         Route::get('/fundceqube', 'fundceqube');
         Route::get('/fundvenus', 'fundvenus');

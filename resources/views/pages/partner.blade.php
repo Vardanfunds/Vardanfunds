@@ -8,13 +8,13 @@
 
                     <div class="col-lg-12 col-xl-12 wow fadeInRight" data-wow-delay="0.3s">
                         <h4 class="text-primary">Partner & Associate</h4>
-                        <div class="row">
+                        <div class="row mt-4">
                            
                                  @isset($newspaper)
                                     @foreach ($newspaper as $key=> $item)
-                                    <div class="col-lg-3 mb-4">
+                                    <div class="col-lg-3 d-flex flex-column align-items-center text-center" style="margin-top: 50px">
                                        
-                                            <img src="{{ $item->partner }}" style="width:210px; height:210px;" alt="Team Image"/>
+                                            <img src="{{ $item->partner }}" style="width:290px; height:180px;" alt="Team Image"/>
                                   
                                     </div>
                                     @endforeach

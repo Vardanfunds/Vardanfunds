@@ -86,7 +86,7 @@
 
                         <div class="col-sm-12">
                             <div class="form-group form-group-default">
-                                <label>Full name</label>
+                                <label>File name</label>
                                 <input id="txtfullname" type="text" class="form-control" placeholder="Enter name" />
                             </div>
                         </div>
