@@ -24,7 +24,7 @@
 <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
 
 <!-- Template Stylesheet -->
-<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+<link href="{{ asset('assets/css/style.css') }}?v={{ filemtime(public_path('assets/css/style.css')) }}" rel="stylesheet">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <style>
     .footer {

@@ -215,6 +215,33 @@
         margin: 10px 0 !important;
     }
 
+    /* Mobile Dropdown Menu Consistency */
+    .navbar .nav-item .dropdown-menu {
+        padding: 0;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        border: none;
+        background: var(--bs-light) !important;
+        border-radius: 8px;
+    }
+
+    .navbar .nav-item .dropdown-menu .dropdown-item {
+        padding: 12px 20px !important;
+        margin: 0 !important;
+        font-size: 14px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar .nav-item .dropdown-menu .dropdown-item:last-child {
+        border-bottom: none;
+    }
+
+    .navbar .nav-item .dropdown-menu .dropdown-item.active,
+    .navbar .nav-item .dropdown-menu .dropdown-item:hover {
+        background: var(--bs-primary) !important;
+        color: var(--bs-white) !important;
+    }
+
 }
 
 .dropdown .dropdown-menu a:hover {
@@ -762,6 +789,27 @@
     .team-img-wrapper {
         aspect-ratio: 1 / 1.25;
         /* Maintain aspect ratio */
+    }
+
+    /* Force Profile Description Alignment on Mobile */
+    .profile-description ul,
+    .profile-description ol,
+    .profile-description li,
+    .profile-description p,
+    .profile-description div {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        text-align: left !important;
+    }
+
+    .profile-description ul {
+        padding-left: 20px !important;
+    }
+
+    .profile-description {
+        padding: 0 10px;
     }
 }
 
