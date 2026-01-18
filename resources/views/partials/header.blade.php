@@ -4,6 +4,9 @@
 <meta content="" name="keywords">
 <meta content="" name="description">
 
+<!-- Favicon -->
+<link rel="icon" href="{{ asset('assets/img/logo.png') }}" type="image/x-icon">
+
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
