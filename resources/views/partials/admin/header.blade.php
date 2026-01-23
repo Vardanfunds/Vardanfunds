@@ -22,6 +22,6 @@
 	<link rel="stylesheet" href="{{ asset('admin/assets/css/semi-dark.css') }}"/>
 	<link rel="stylesheet" href="{{ asset('admin/assets/css/header-colors.css') }}"/>
 	<link href="{{ asset('admin/assets/plugins/datatable/css/dataTables.bootstrap5.min.css') }}" rel="stylesheet" />
-		<!-- Froala Editor Stylesheet-->
-    <link href='https://cdn.jsdelivr.net/npm/froala-editor@latest/css/froala_editor.pkgd.min.css' rel='stylesheet' type='text/css' />
+	<!-- Summernote Editor Stylesheet (Free Open Source) -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.20/dist/summernote-bs5.min.css" rel="stylesheet">
 	<title>Vardan Admin Panel</title>

@@ -104,6 +104,10 @@ class AdminController extends Controller
         $sales_ledgerModel = new SilderModel();
         $salesleger = $sales_ledgerModel->where('id', $request->id)->orderBy('id', 'DESC')->first();
         if (!empty($salesleger)) {
+            // Delete image file from disk
+            if (!empty($salesleger->img) && file_exists(public_path($salesleger->img))) {
+                unlink(public_path($salesleger->img));
+            }
             $salesleger->delete();
             $response["status"] = true;
         } else {
@@ -117,6 +121,10 @@ class AdminController extends Controller
         $sales_ledgerModel = new TeamsModel();
         $salesleger = $sales_ledgerModel->where('id', $request->id)->orderBy('id', 'DESC')->first();
         if (!empty($salesleger)) {
+            // Delete image file from disk
+            if (!empty($salesleger->img) && file_exists(public_path($salesleger->img))) {
+                unlink(public_path($salesleger->img));
+            }
             $salesleger->delete();
             $response["status"] = true;
         } else {
@@ -275,6 +283,14 @@ class AdminController extends Controller
         $sales_ledgerModel = new NewpaperModel();
         $salesleger = $sales_ledgerModel->where('id', $request->id)->orderBy('id', 'DESC')->first();
         if (!empty($salesleger)) {
+            // Delete PDF file from disk
+            if (!empty($salesleger->file) && file_exists(public_path($salesleger->file))) {
+                unlink(public_path($salesleger->file));
+            }
+            // Delete title image from disk
+            if (!empty($salesleger->img) && file_exists(public_path($salesleger->img))) {
+                unlink(public_path($salesleger->img));
+            }
             $salesleger->delete();
             $response["status"] = true;
         } else {
@@ -302,7 +318,7 @@ class AdminController extends Controller
         // Validate
         $request->validate([
             'id' => 'nullable|integer',
-            'image' => 'required|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'image' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
 
         $id = $request->id;
@@ -358,6 +374,10 @@ class AdminController extends Controller
         $sales_ledgerModel = new PartnetModel();
         $salesleger = $sales_ledgerModel->where('id', $request->id)->orderBy('id', 'DESC')->first();
         if (!empty($salesleger)) {
+            // Delete image file from disk
+            if (!empty($salesleger->partner) && file_exists(public_path($salesleger->partner))) {
+                unlink(public_path($salesleger->partner));
+            }
             $salesleger->delete();
             $response["status"] = true;
         } else {
@@ -441,6 +461,10 @@ class AdminController extends Controller
         $sales_ledgerModel = new PortfiloModel();
         $salesleger = $sales_ledgerModel->where('id', $request->id)->orderBy('id', 'DESC')->first();
         if (!empty($salesleger)) {
+            // Delete image file from disk
+            if (!empty($salesleger->img) && file_exists(public_path($salesleger->img))) {
+                unlink(public_path($salesleger->img));
+            }
             $salesleger->delete();
             $response["status"] = true;
         } else {
@@ -523,6 +547,10 @@ class AdminController extends Controller
         $sales_ledgerModel = new FundPdfModel();
         $salesleger = $sales_ledgerModel->where('id', $request->id)->orderBy('id', 'DESC')->first();
         if (!empty($salesleger)) {
+            // Delete PDF file from disk
+            if (!empty($salesleger->file) && file_exists(public_path($salesleger->file))) {
+                unlink(public_path($salesleger->file));
+            }
             $salesleger->delete();
             $response["status"] = true;
         } else {
