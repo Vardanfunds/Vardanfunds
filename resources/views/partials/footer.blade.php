@@ -30,7 +30,7 @@
     
     <!-- Base URL for AJAX (must be after jQuery) -->
     <script>
-        var base_url = '{{ config("app.url") }}/';
+        var base_url = "{{ url('/') }}/";
     </script>
 
     <!-- Template Javascript -->
