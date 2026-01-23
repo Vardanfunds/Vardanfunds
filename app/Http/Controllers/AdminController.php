@@ -65,14 +65,24 @@ class AdminController extends Controller
 
         // If new image given — upload & replace old one
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            // Delete old image if exists
-            if (!empty($silderModel->img) && file_exists(public_path($silderModel->img))) {
-                unlink(public_path($silderModel->img));
+            // Delete old image if exists (check both locations)
+            if (!empty($silderModel->img)) {
+                if (file_exists(public_html_path($silderModel->img))) {
+                    unlink(public_html_path($silderModel->img));
+                } elseif (file_exists(public_path($silderModel->img))) {
+                    unlink(public_path($silderModel->img));
+                }
             }
 
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/slider'), $filename);
+            
+            // Upload to public_html for GoDaddy compatibility
+            $uploadDir = public_html_path('uploads/slider');
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+            $file->move($uploadDir, $filename);
             $silderModel->img = 'uploads/slider/' . $filename;
         }
 
@@ -104,9 +114,13 @@ class AdminController extends Controller
         $sales_ledgerModel = new SilderModel();
         $salesleger = $sales_ledgerModel->where('id', $request->id)->orderBy('id', 'DESC')->first();
         if (!empty($salesleger)) {
-            // Delete image file from disk
-            if (!empty($salesleger->img) && file_exists(public_path($salesleger->img))) {
-                unlink(public_path($salesleger->img));
+            // Delete image file from disk (check both locations)
+            if (!empty($salesleger->img)) {
+                if (file_exists(public_html_path($salesleger->img))) {
+                    unlink(public_html_path($salesleger->img));
+                } elseif (file_exists(public_path($salesleger->img))) {
+                    unlink(public_path($salesleger->img));
+                }
             }
             $salesleger->delete();
             $response["status"] = true;
@@ -121,9 +135,13 @@ class AdminController extends Controller
         $sales_ledgerModel = new TeamsModel();
         $salesleger = $sales_ledgerModel->where('id', $request->id)->orderBy('id', 'DESC')->first();
         if (!empty($salesleger)) {
-            // Delete image file from disk
-            if (!empty($salesleger->img) && file_exists(public_path($salesleger->img))) {
-                unlink(public_path($salesleger->img));
+            // Delete image file from disk (check both locations)
+            if (!empty($salesleger->img)) {
+                if (file_exists(public_html_path($salesleger->img))) {
+                    unlink(public_html_path($salesleger->img));
+                } elseif (file_exists(public_path($salesleger->img))) {
+                    unlink(public_path($salesleger->img));
+                }
             }
             $salesleger->delete();
             $response["status"] = true;
@@ -173,14 +191,24 @@ class AdminController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            // Delete old image if exists
-            if (!empty($TeamsModel->img) && file_exists(public_path($TeamsModel->img))) {
-                unlink(public_path($TeamsModel->img));
+            // Delete old image if exists (check both locations)
+            if (!empty($TeamsModel->img)) {
+                if (file_exists(public_html_path($TeamsModel->img))) {
+                    unlink(public_html_path($TeamsModel->img));
+                } elseif (file_exists(public_path($TeamsModel->img))) {
+                    unlink(public_path($TeamsModel->img));
+                }
             }
 
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/teams'), $filename);
+            
+            // Upload to public_html for GoDaddy compatibility
+            $uploadDir = public_html_path('uploads/teams');
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+            $file->move($uploadDir, $filename);
             $TeamsModel->img = 'uploads/teams/' . $filename;
         }
 
@@ -239,27 +267,49 @@ class AdminController extends Controller
 
         /* ===== PDF FILE ===== */
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            // Delete old PDF if exists
-            if (!empty($NewpaperModel->file) && file_exists(public_path($NewpaperModel->file))) {
-                unlink(public_path($NewpaperModel->file));
+            // Delete old PDF if exists (check both locations)
+            if (!empty($NewpaperModel->file)) {
+                if (file_exists(public_html_path($NewpaperModel->file))) {
+                    unlink(public_html_path($NewpaperModel->file));
+                } elseif (file_exists(public_path($NewpaperModel->file))) {
+                    unlink(public_path($NewpaperModel->file));
+                }
             }
 
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/newsletter'), $filename);
+            
+            // Ensure directory exists in public_html
+            $uploadDir = public_html_path('uploads/newsletter');
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+            
+            $file->move($uploadDir, $filename);
             $NewpaperModel->file = 'uploads/newsletter/' . $filename;
         }
 
         /* ===== TITLE IMAGE ===== */
         if ($request->hasFile('title') && $request->file('title')->isValid()) {
-            // Delete old image if exists
-            if (!empty($NewpaperModel->img) && file_exists(public_path($NewpaperModel->img))) {
-                unlink(public_path($NewpaperModel->img));
+            // Delete old image if exists (check both locations)
+            if (!empty($NewpaperModel->img)) {
+                if (file_exists(public_html_path($NewpaperModel->img))) {
+                    unlink(public_html_path($NewpaperModel->img));
+                } elseif (file_exists(public_path($NewpaperModel->img))) {
+                    unlink(public_path($NewpaperModel->img));
+                }
             }
 
             $file = $request->file('title');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/newsletter/title'), $filename);
+            
+            // Ensure directory exists in public_html
+            $uploadDir = public_html_path('uploads/newsletter/title');
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+            
+            $file->move($uploadDir, $filename);
             $NewpaperModel->img = 'uploads/newsletter/title/' . $filename;
         }
 
@@ -283,13 +333,21 @@ class AdminController extends Controller
         $sales_ledgerModel = new NewpaperModel();
         $salesleger = $sales_ledgerModel->where('id', $request->id)->orderBy('id', 'DESC')->first();
         if (!empty($salesleger)) {
-            // Delete PDF file from disk
-            if (!empty($salesleger->file) && file_exists(public_path($salesleger->file))) {
-                unlink(public_path($salesleger->file));
+            // Delete PDF file from disk (check both locations)
+            if (!empty($salesleger->file)) {
+                if (file_exists(public_html_path($salesleger->file))) {
+                    unlink(public_html_path($salesleger->file));
+                } elseif (file_exists(public_path($salesleger->file))) {
+                    unlink(public_path($salesleger->file));
+                }
             }
-            // Delete title image from disk
-            if (!empty($salesleger->img) && file_exists(public_path($salesleger->img))) {
-                unlink(public_path($salesleger->img));
+            // Delete title image from disk (check both locations)
+            if (!empty($salesleger->img)) {
+                if (file_exists(public_html_path($salesleger->img))) {
+                    unlink(public_html_path($salesleger->img));
+                } elseif (file_exists(public_path($salesleger->img))) {
+                    unlink(public_path($salesleger->img));
+                }
             }
             $salesleger->delete();
             $response["status"] = true;
@@ -339,14 +397,24 @@ class AdminController extends Controller
 
         // Handle image upload
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            // Delete old image safely
-            if (!empty($PartnetModel->partner) && file_exists(public_path($PartnetModel->partner))) {
-                unlink(public_path($PartnetModel->partner));
+            // Delete old image safely (check both locations)
+            if (!empty($PartnetModel->partner)) {
+                if (file_exists(public_html_path($PartnetModel->partner))) {
+                    unlink(public_html_path($PartnetModel->partner));
+                } elseif (file_exists(public_path($PartnetModel->partner))) {
+                    unlink(public_path($PartnetModel->partner));
+                }
             }
 
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/partner'), $filename);
+            
+            // Upload to public_html for GoDaddy compatibility
+            $uploadDir = public_html_path('uploads/partner');
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+            $file->move($uploadDir, $filename);
             $PartnetModel->partner = 'uploads/partner/' . $filename;
         } elseif (!$id) {
             return response()->json([
@@ -374,9 +442,13 @@ class AdminController extends Controller
         $sales_ledgerModel = new PartnetModel();
         $salesleger = $sales_ledgerModel->where('id', $request->id)->orderBy('id', 'DESC')->first();
         if (!empty($salesleger)) {
-            // Delete image file from disk
-            if (!empty($salesleger->partner) && file_exists(public_path($salesleger->partner))) {
-                unlink(public_path($salesleger->partner));
+            // Delete image file from disk (check both locations)
+            if (!empty($salesleger->partner)) {
+                if (file_exists(public_html_path($salesleger->partner))) {
+                    unlink(public_html_path($salesleger->partner));
+                } elseif (file_exists(public_path($salesleger->partner))) {
+                    unlink(public_path($salesleger->partner));
+                }
             }
             $salesleger->delete();
             $response["status"] = true;
@@ -427,15 +499,25 @@ class AdminController extends Controller
 
         // Handle image upload (required for new, optional for edit)
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            // Delete old image if exists
-            if (!empty($PortfiloModel->img) && file_exists(public_path($PortfiloModel->img))) {
-                unlink(public_path($PortfiloModel->img));
+            // Delete old image if exists (check both locations)
+            if (!empty($PortfiloModel->img)) {
+                if (file_exists(public_html_path($PortfiloModel->img))) {
+                    unlink(public_html_path($PortfiloModel->img));
+                } elseif (file_exists(public_path($PortfiloModel->img))) {
+                    unlink(public_path($PortfiloModel->img));
+                }
             }
 
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/partner'), $filename);
-            $PortfiloModel->img = 'uploads/partner/' . $filename;
+            
+            // Upload to public_html for GoDaddy compatibility
+            $uploadDir = public_html_path('uploads/portfolio');
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+            $file->move($uploadDir, $filename);
+            $PortfiloModel->img = 'uploads/portfolio/' . $filename;
         } elseif (!$id && !$request->hasFile('image')) {
             return response()->json([
                 'status' => false,
@@ -461,9 +543,13 @@ class AdminController extends Controller
         $sales_ledgerModel = new PortfiloModel();
         $salesleger = $sales_ledgerModel->where('id', $request->id)->orderBy('id', 'DESC')->first();
         if (!empty($salesleger)) {
-            // Delete image file from disk
-            if (!empty($salesleger->img) && file_exists(public_path($salesleger->img))) {
-                unlink(public_path($salesleger->img));
+            // Delete image file from disk (check both locations)
+            if (!empty($salesleger->img)) {
+                if (file_exists(public_html_path($salesleger->img))) {
+                    unlink(public_html_path($salesleger->img));
+                } elseif (file_exists(public_path($salesleger->img))) {
+                    unlink(public_path($salesleger->img));
+                }
             }
             $salesleger->delete();
             $response["status"] = true;
@@ -518,14 +604,24 @@ class AdminController extends Controller
 
         /* ===== PDF FILE ===== */
         if ($request->hasFile('image') && $request->file('image')->isValid()) {
-            // Delete old PDF if exists
-            if (!empty($NewpaperModel->file) && file_exists(public_path($NewpaperModel->file))) {
-                unlink(public_path($NewpaperModel->file));
+            // Delete old PDF if exists (check both locations)
+            if (!empty($NewpaperModel->file)) {
+                if (file_exists(public_html_path($NewpaperModel->file))) {
+                    unlink(public_html_path($NewpaperModel->file));
+                } elseif (file_exists(public_path($NewpaperModel->file))) {
+                    unlink(public_path($NewpaperModel->file));
+                }
             }
 
             $file = $request->file('image');
             $filename = time() . '_' . $file->getClientOriginalName();
-            $file->move(public_path('uploads/fundpdf'), $filename);
+            
+            // Upload to public_html for GoDaddy compatibility
+            $uploadDir = public_html_path('uploads/fundpdf');
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+            $file->move($uploadDir, $filename);
             $NewpaperModel->file = 'uploads/fundpdf/' . $filename;
         }
         // Set creator safely
@@ -547,9 +643,13 @@ class AdminController extends Controller
         $sales_ledgerModel = new FundPdfModel();
         $salesleger = $sales_ledgerModel->where('id', $request->id)->orderBy('id', 'DESC')->first();
         if (!empty($salesleger)) {
-            // Delete PDF file from disk
-            if (!empty($salesleger->file) && file_exists(public_path($salesleger->file))) {
-                unlink(public_path($salesleger->file));
+            // Delete PDF file from disk (check both locations)
+            if (!empty($salesleger->file)) {
+                if (file_exists(public_html_path($salesleger->file))) {
+                    unlink(public_html_path($salesleger->file));
+                } elseif (file_exists(public_path($salesleger->file))) {
+                    unlink(public_path($salesleger->file));
+                }
             }
             $salesleger->delete();
             $response["status"] = true;
