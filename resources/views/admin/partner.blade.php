@@ -32,9 +32,9 @@
                                                 <td><img src="{{ asset($item->partner) }}" target="_blank" width="150" height="80"></img></td>
                                                 <td>
                                                     <div class="row">
-                                                        {{-- <div class="col-lg-6">
-                                                            <a id="{{ $item->id }}" onclick="editnewletter(this.id)"><i style="font-size:20px;  color: rgb(89, 0, 255);" class="fas fa-edit"></i></a>
-                                                        </div> --}}
+                                                        <div class="col-lg-6">
+                                                            <a id="{{ $item->id }}" onclick="editpartner(this.id)"><i style="font-size:20px;  color: rgb(89, 0, 255);" class="bx bx-edit"></i></a>
+                                                        </div>
                                                        
                                                         <div class="col-lg-6">
                                                             <a href="#" onclick="deletepartner('{{ $item->id }}')"><i style="font-size:20px;  color:red;" class="bx bx-trash"></i>

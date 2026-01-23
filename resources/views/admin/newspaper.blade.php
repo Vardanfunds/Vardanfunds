@@ -35,11 +35,11 @@
                                                         height="80">{{ $item['name'] }}</a></td>
                                                 <td>
                                                     <div class="row">
-                                                        {{-- <div class="col-lg-6">
+                                                        <div class="col-lg-6">
                                                             <a id="{{ $item->id }}" onclick="editnewletter(this.id)"><i
                                                                     style="font-size:20px;  color: rgb(89, 0, 255);"
                                                                     class="bx bx-edit"></i></a>
-                                                        </div> --}}
+                                                        </div>
 
                                                         <div class="col-lg-6">
                                                             <a href="#"

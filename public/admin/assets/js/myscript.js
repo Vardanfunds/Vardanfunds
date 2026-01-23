@@ -8,7 +8,8 @@ $("#addteam").on("click", function () {
 
     formData.append("name", $("#txtfullname").val());
     formData.append("id", $("#txtteamid").val());
-    formData.append("description", $("#editor").val());
+    // Get content from Summernote editor
+    formData.append("description", $("#editor").summernote('code'));
 
     // 🔥 Append image ONLY if selected
     let imageInput = $("#txtteamsimg")[0];
@@ -60,7 +61,8 @@ function editteams(id) {
             // Fill form fields
             $("#txtteamid").val(data.id);
             $("#txtfullname").val(data.name);
-            $("#editor").val(data.description);
+            // Set content in Summernote editor
+            $("#editor").summernote('code', data.description);
 
             // You CANNOT set .val() for a file input. So show preview text instead.
             $("#currentImage").html(
@@ -235,20 +237,19 @@ function editpartner(id) {
         success: function (data) {
             console.log(data);
 
-            // Open the modal
-            $("#addnewsletter").modal("show");
+            // Open the correct modal
+            $("#addpartner").modal("show");
 
             // Fill form fields
-            $("#txtfileid").val(data.id);
-            $("#txtfullname").val(data.name);
+            $("#txtpartnerid").val(data.id);
 
-            // You CANNOT set .val() for a file input. So show preview text instead.
+            // Show current image preview
             $("#currentImage").html(
-                `<small class="text-success">Current Image: ${data.img}</small>`
+                `<small class="text-success">Current Image: <img src="${base_url}${data.partner}" width="100" height="50"/></small>`
             );
 
             // Change button text from "Add" → "Update"
-            $("#addteam").text("Update");
+            $("#addbtnpartner").text("Update");
         },
     });
 }

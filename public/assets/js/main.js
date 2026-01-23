@@ -148,7 +148,16 @@ $("#btncontact").on("click", function () {
             location.reload();
         },
         error: function (err) {
-            alert("CSRF error: " + err.responseText);
+            console.error("AJAX Error:", err);
+            let msg = "An error occurred";
+            if (err.responseJSON && err.responseJSON.message) {
+                msg = err.responseJSON.message;
+            } else if (err.responseText) {
+                msg = err.responseText;
+            } else {
+                msg = `${err.status} ${err.statusText}`;
+            }
+            alert("Error: " + msg);
         }
     });
 
