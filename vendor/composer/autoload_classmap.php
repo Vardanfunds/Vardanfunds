@@ -21,6 +21,7 @@ return array(
     'App\\Models\\SilderModel' => $baseDir . '/app/Models/SilderModel.php',
     'App\\Models\\TeamsModel' => $baseDir . '/app/Models/TeamsModel.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
+    'App\\Notifications\\AdminContactNotify' => $baseDir . '/app/Notifications/AdminContactNotify.php',
     'App\\Notifications\\ContactNotify' => $baseDir . '/app/Notifications/ContactNotify.php',
     'App\\Notifications\\UserNotify' => $baseDir . '/app/Notifications/UserNotify.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
