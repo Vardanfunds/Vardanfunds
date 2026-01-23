@@ -30,7 +30,7 @@
     
     <!-- Base URL for AJAX (must be after jQuery) -->
     <script>
-        var base_url = '<?php echo e(config("app.url")); ?>/';
+        var base_url = "<?php echo e(url('/')); ?>/";
     </script>
 
     <!-- Template Javascript -->
