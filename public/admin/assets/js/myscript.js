@@ -3,16 +3,27 @@ $(document).ready(function () {
 
     // Reset Teams form when modal is closed
     $("#addteammodel").on("hidden.bs.modal", function () {
-        $("#txtteamid").val("");
-        $("#txtfullname").val("");
-        if ($("#editor").summernote) {
-            $("#editor").summernote("code", "");
-        }
-        $("#txtteamsimg").val("");
-        $("#currentImage").html("");
-        $("#addteam").text("Save changes");
+        resetTeamsForm();
+    });
+
+    // Reset form when "Add Record" button is clicked (before modal opens)
+    $('[data-bs-target="#addteammodel"]').on("click", function () {
+        resetTeamsForm();
     });
 });
+
+// Function to reset Teams form
+function resetTeamsForm() {
+    $("#txtteamid").val("");
+    $("#txtfullname").val("");
+    // Clear Summernote editor
+    if ($("#editor").length && $.fn.summernote) {
+        $("#editor").summernote("code", "");
+    }
+    $("#txtteamsimg").val("");
+    $("#currentImage").html("");
+    $("#addteam").text("Save changes");
+}
 
 //Teams
 $("#addteam").on("click", function () {
@@ -58,6 +69,7 @@ $("#addteam").on("click", function () {
         },
     });
 });
+
 function editteams(id) {
     $.ajax({
         type: "GET",
@@ -65,27 +77,39 @@ function editteams(id) {
         dataType: "json",
 
         success: function (data) {
-            console.log(data);
+            console.log("Edit data received:", data);
 
-            // Open the modal
-            $("#addteammodel").modal("show");
-
-            // Fill form fields
+            // Fill form fields BEFORE opening modal
             $("#txtteamid").val(data.id);
             $("#txtfullname").val(data.name);
-            // Set content in Summernote editor
-            $("#editor").summernote('code', data.description);
 
             // Show current image preview
             if (data.img) {
                 $("#currentImage").html(
                     `<small class="text-success">Current Image:</small><br><img src="${base_url}${data.img}" width="100" height="60" style="margin-top:5px; border-radius:5px;">`
                 );
+            } else {
+                $("#currentImage").html("");
             }
 
             // Change button text from "Add" → "Update"
             $("#addteam").text("Update");
+
+            // Open the modal
+            $("#addteammodel").modal("show");
+
+            // Set Summernote content AFTER modal is shown (with delay for initialization)
+            setTimeout(function () {
+                if (data.description) {
+                    $("#editor").summernote('code', data.description);
+                }
+            }, 300);
         },
+
+        error: function (err) {
+            console.error("Edit error:", err);
+            alert("Failed to load team data");
+        }
     });
 }
 function deleteteams(item_id) {
