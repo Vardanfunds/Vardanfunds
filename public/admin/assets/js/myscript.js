@@ -1,5 +1,17 @@
 $(document).ready(function () {
     $("#basic-datatables").DataTable();
+
+    // Reset Teams form when modal is closed
+    $("#addteammodel").on("hidden.bs.modal", function () {
+        $("#txtteamid").val("");
+        $("#txtfullname").val("");
+        if ($("#editor").summernote) {
+            $("#editor").summernote("code", "");
+        }
+        $("#txtteamsimg").val("");
+        $("#currentImage").html("");
+        $("#addteam").text("Save changes");
+    });
 });
 
 //Teams
@@ -64,10 +76,12 @@ function editteams(id) {
             // Set content in Summernote editor
             $("#editor").summernote('code', data.description);
 
-            // You CANNOT set .val() for a file input. So show preview text instead.
-            $("#currentImage").html(
-                `<small class="text-success">Current Image: ${data.img}</small>`
-            );
+            // Show current image preview
+            if (data.img) {
+                $("#currentImage").html(
+                    `<small class="text-success">Current Image:</small><br><img src="${base_url}${data.img}" width="100" height="60" style="margin-top:5px; border-radius:5px;">`
+                );
+            }
 
             // Change button text from "Add" → "Update"
             $("#addteam").text("Update");
