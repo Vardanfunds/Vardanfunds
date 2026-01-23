@@ -36,6 +36,7 @@ class ContactNotify extends Notification
     {
         return (new MailMessage)
         ->subject('Acknowledgement of Your Message')
+        ->replyTo('reporting@vardanfunds.com', 'Vardan Funds Support') // <--- If user replies, it goes to support
         ->view('email.enquiry_acknowledgement', [
             'name' => $this->name
         ]); 

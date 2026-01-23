@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
 use App\Models\SilderModel;
 use App\Models\TeamsModel;
 use App\Notifications\ContactNotify;
+use App\Notifications\AdminContactNotify;
+use Illuminate\Support\Facades\Notification;
 
 class ClientController extends Controller
 {
@@ -105,21 +107,26 @@ class ClientController extends Controller
             'message' => 'required|string',
             'txtfundtype' => 'required|string',
         ]);
-        $contact=new ContactModel();
+        
+        $contact = new ContactModel();
         $contact->name = $request->name;
         $contact->phone = $request->phone;
         $contact->email = $request->email;
-        $contact->subject = $request->subject;   // IMPORTANT
+        $contact->subject = $request->subject;
         $contact->msg = $request->message;
         $contact->project = $request->txtfundtype;
         $contact->save();
-         // Send notification (AFTER save)
+        
+        // Send acknowledgement email to the user
         $contact->notify(new ContactNotify($contact->name));
+        
+        // Send notification email to admin (reporting@vardanfunds.com)
+        Notification::route('mail', 'reporting@vardanfunds.com')
+            ->notify(new AdminContactNotify($contact));
 
-         return response()->json([
+        return response()->json([
             'status' => true,
-            'message' =>'Well Contact you soon..!'
-            
+            'message' => 'We will contact you soon!'
         ]);
     }
 }
