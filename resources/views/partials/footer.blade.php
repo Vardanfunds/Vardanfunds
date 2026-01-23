@@ -13,16 +13,9 @@
     </footer>      
 <!-- Footer End -->
 
-
-
-
-
         <!-- Back to Top -->
         <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
 
-    <script>
-        var base_url = '<?php echo config("app.url"); ?>';
-    </script>
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -31,7 +24,14 @@
     <script src="{{ asset('assets/lib/waypoints/waypoints.min.js') }}"></script>
     <script src="{{ asset('assets/lib/counterup/counterup.min.js') }}"></script>
     <script src="{{ asset('assets/lib/owlcarousel/owl.carousel.min.js') }}"></script>
-
+    
+    <!-- SweetAlert for notifications -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert@2"></script>
+    
+    <!-- Base URL for AJAX (must be after jQuery) -->
+    <script>
+        var base_url = '{{ config("app.url") }}/';
+    </script>
 
     <!-- Template Javascript -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
